@@ -1,0 +1,128 @@
+:root {
+  color-scheme: light dark;
+  --bg: #f6f7f9;
+  --fg: #1c1e21;
+  --muted: #6b7280;
+  --border: #d1d5db;
+  --accent: #2563eb;
+  --danger: #dc2626;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1115;
+    --fg: #e5e7eb;
+    --muted: #9ca3af;
+    --border: #2a2f3a;
+    --accent: #60a5fa;
+    --danger: #f87171;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.app {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 32px 20px 64px;
+}
+
+.app__header h1 {
+  margin: 0 0 4px;
+}
+.app__subtitle {
+  margin: 0 0 24px;
+  color: var(--muted);
+}
+.app__filename {
+  color: var(--muted);
+}
+.app__status {
+  color: var(--muted);
+}
+.app__error {
+  color: var(--danger);
+  border: 1px solid var(--danger);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 16px 0;
+}
+
+.dropzone {
+  border: 2px dashed var(--border);
+  border-radius: 12px;
+  padding: 36px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    border-color 0.15s,
+    background 0.15s;
+  background: transparent;
+}
+.dropzone:hover {
+  border-color: var(--accent);
+}
+.dropzone--over {
+  border-color: var(--accent);
+  background: rgba(37, 99, 235, 0.06);
+}
+.dropzone--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.dropzone__title {
+  font-size: 1.1rem;
+  margin: 0 0 6px;
+}
+.dropzone__hint {
+  color: var(--muted);
+  margin: 0;
+}
+
+.doc-view {
+  margin-top: 24px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  background: white;
+  color: #111;
+}
+@media (prefers-color-scheme: dark) {
+  .doc-view {
+    background: #171a21;
+    color: #e5e7eb;
+  }
+}
+.doc-view__meta {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.doc-view__body img {
+  max-width: 100%;
+  height: auto;
+}
+.doc-view__body table {
+  border-collapse: collapse;
+}
+.doc-view__body td,
+.doc-view__body th {
+  border: 1px solid var(--border);
+  padding: 4px 8px;
+}
