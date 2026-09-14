@@ -1,0 +1,20 @@
+{
+  "name": "doc-reader",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:app": "npm run dev -w @doc-reader/app",
+    "build:core": "npm run build -w @doc-reader/core",
+    "build:app": "npm run build -w @doc-reader/app",
+    "build:ext": "npm run build -w @doc-reader/extension",
+    "build": "npm run build:core && npm run build:app && npm run build:ext",
+    "clean": "rm -rf packages/*/dist node_modules packages/*/node_modules"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

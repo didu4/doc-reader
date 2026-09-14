@@ -1,0 +1,15 @@
+{
+  "name": "@doc-reader/core",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "scripts": {
+    "build": "echo \"core: nothing to build yet\""
+  },
+  "dependencies": {
+    "mammoth": "^1.8.0"
+  }
+}
